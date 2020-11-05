@@ -132,14 +132,14 @@ public:
    * \param timeout Maximum duration to wait.  If -1 then this call will not timeout.
    * \return true iff the bond has been formed.
    */
-  bool waitUntilFormed(rclcpp::Duration timeout = rclcpp::Duration(-1 * 1e9));
+  bool waitUntilFormed(rclcpp::Duration timeout = rclcpp::Duration::from_nanoseconds(-1 * 1e9));
   /** \brief Blocks until the bond is broken for at most 'duration'.
    *    Assumes the node to be spinning in the background
    *
    * \param timeout Maximum duration to wait.  If -1 then this call will not timeout.
    * \return true iff the bond has been broken, even if it has never been formed.
    */
-  bool waitUntilBroken(rclcpp::Duration timeout = rclcpp::Duration(-1 * 1e9));
+  bool waitUntilBroken(rclcpp::Duration timeout = rclcpp::Duration::from_nanoseconds(-1 * 1e9));
   /** \brief Indicates if the bond is broken.
    */
   bool isBroken();
